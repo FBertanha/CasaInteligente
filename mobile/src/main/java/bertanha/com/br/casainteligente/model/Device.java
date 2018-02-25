@@ -1,9 +1,5 @@
 package bertanha.com.br.casainteligente.model;
 
-import android.support.constraint.ConstraintLayout;
-
-import com.google.android.things.pio.Gpio;
-
 /**
  * Created by berta on 2/15/2018.
  */
@@ -16,7 +12,6 @@ public class Device {
 
     private String description;
     private String bcm;
-    private Gpio gpio;
     private int type;
     private boolean value;
     private String status;
@@ -28,13 +23,6 @@ public class Device {
         this.description = description;
         this.bcm = bcm;
         this.type = type;
-    }
-
-    public Device(String description, String bcm, int type, String status) {
-        this.description = description;
-        this.bcm = bcm;
-        this.type = type;
-        this.status = status;
     }
 
     public String getBcm() {
@@ -69,15 +57,6 @@ public class Device {
         this.description = description;
     }
 
-
-    public Gpio getGpio() {
-        return gpio;
-    }
-
-    public void setGpio(Gpio gpio) {
-        this.gpio = gpio;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,7 +77,6 @@ public class Device {
         return "Device{" +
                 "description='" + description + '\'' +
                 ", bcm='" + bcm + '\'' +
-                ", gpio=" + gpio +
                 ", type=" + type +
                 ", value=" + value +
                 ", status='" + status + '\'' +
