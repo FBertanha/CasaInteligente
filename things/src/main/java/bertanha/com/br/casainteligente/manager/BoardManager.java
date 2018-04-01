@@ -3,7 +3,7 @@ package bertanha.com.br.casainteligente.manager;
 import android.util.Log;
 
 import com.google.android.things.pio.Gpio;
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bertanha.com.br.casainteligente.model.Device;
-import bertanha.com.br.casainteligente.util.FirebaseUtils;
+import bertanha.com.br.mylibrary.util.FirebaseUtils;
 
 /**
  * Created by berta on 2/24/2018.
@@ -104,7 +104,7 @@ public class BoardManager {
     }
 
     private Gpio openGpio(String bcm) {
-        PeripheralManagerService managerService = new PeripheralManagerService();
+        PeripheralManager managerService = PeripheralManager.getInstance();
         Gpio bus = null;
 
         try {

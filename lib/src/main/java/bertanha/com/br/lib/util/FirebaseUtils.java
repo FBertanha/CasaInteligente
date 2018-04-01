@@ -1,4 +1,4 @@
-package bertanha.com.br.casainteligente.util;
+package bertanha.com.br.lib.util;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

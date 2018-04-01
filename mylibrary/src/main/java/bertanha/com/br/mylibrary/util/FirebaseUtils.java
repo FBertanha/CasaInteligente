@@ -1,4 +1,4 @@
-package bertanha.com.br.casainteligente.util;
+package bertanha.com.br.mylibrary.util;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,6 +20,7 @@ public class FirebaseUtils {
         if (mDatabase == null) {
             mDatabase = FirebaseDatabase.getInstance();
             mDatabase.setPersistenceEnabled(true);
+
         }
         return mDatabase;
     }

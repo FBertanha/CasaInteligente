@@ -1,9 +1,11 @@
 package bertanha.com.br.casainteligente.util;
 
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.List;
+
+import bertanha.com.br.mylibrary.util.FirebaseUtils;
 
 
 /**
@@ -14,7 +16,7 @@ public class BoardUtils {
     
     public static void updateGpioList() {
         DatabaseReference gpioRef = FirebaseUtils.getDatabaseReference().child(FirebaseUtils.GPIO_LIST);
-        PeripheralManagerService managerService = new PeripheralManagerService();
+        PeripheralManager managerService = PeripheralManager.getInstance();
 
         List<String> gpioList = managerService.getGpioList();
     }

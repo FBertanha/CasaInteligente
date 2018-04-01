@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -14,7 +13,7 @@ import com.google.firebase.database.Query;
 import bertanha.com.br.casainteligente.R;
 import bertanha.com.br.casainteligente.model.Device;
 import bertanha.com.br.casainteligente.ui.adapter.DeviceAdapter;
-import bertanha.com.br.casainteligente.util.FirebaseUtils;
+import bertanha.com.br.mylibrary.util.FirebaseUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         mDatabaseRef = FirebaseUtils.getDatabaseReference();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.activity_main_lista);
+        mRecyclerView = (RecyclerView) findViewById(R.id.main_lista);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
         //LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
