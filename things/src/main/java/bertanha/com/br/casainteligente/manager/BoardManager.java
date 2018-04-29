@@ -37,7 +37,7 @@ public class BoardManager {
     private void loadAndListen() {
         //seed();
         //TODO habilitar adicição de novos devices
-        DatabaseReference devicesRef = FirebaseUtils.getDatabaseReference().child(FirebaseUtils.DEVICES);
+        DatabaseReference devicesRef = FirebaseUtils.getDatabaseReference().child(FirebaseUtils.NODE_DEVICES);
 
         devicesRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -54,7 +54,7 @@ public class BoardManager {
                 Device deviceSnapshot = dataSnapshot.getValue(Device.class);
                 Gpio gpio = deviceList.get(deviceList.indexOf(deviceSnapshot)).getGpio();
 
-                if (deviceSnapshot.getType() == Device.TYPE_LED) {
+                if (deviceSnapshot.getType() == Device.TYPE_LIGHT) {
                     try {
                         gpio.setValue(deviceSnapshot.getValue());
                     } catch (IOException e) {
@@ -93,7 +93,7 @@ public class BoardManager {
 
         if (device.getGpio() == null) return;
 
-        if (device.getType() == Device.TYPE_LED) {
+        if (device.getType() == Device.TYPE_LIGHT) {
             try {
                 device.getGpio().setDirection(device.getValue() ? Gpio.DIRECTION_OUT_INITIALLY_HIGH : Gpio.DIRECTION_OUT_INITIALLY_LOW);
                 device.getGpio().setActiveType(Gpio.ACTIVE_HIGH);
@@ -132,12 +132,12 @@ public class BoardManager {
     }
 
     private void seed() {
-        DatabaseReference devicesRef = FirebaseUtils.getDatabaseReference().child(FirebaseUtils.DEVICES);
+        DatabaseReference devicesRef = FirebaseUtils.getDatabaseReference().child(FirebaseUtils.NODE_DEVICES);
         final List<Device> devices = new ArrayList<>();
 
-        devices.add(new Device("Led azul", "BCM17", Device.TYPE_LED));
-        devices.add(new Device("Led Vermelho", "BCM27", Device.TYPE_LED));
-        devices.add(new Device("Weather", "BCM26", Device.TYPE_WEATHER));
+        devices.add(new Device("Led azul", "BCM17", Device.TYPE_LIGHT));
+        devices.add(new Device("Led Vermelho", "BCM27", Device.TYPE_LIGHT));
+        devices.add(new Device("Weather", "BCM26", Device.TYPE_TEMPERATURE));
 
         for (Device device:
              devices) {

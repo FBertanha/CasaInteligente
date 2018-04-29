@@ -9,8 +9,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseUtils {
 
-    public static String DEVICES = "devices";
-    public static String GPIO_LIST = "gpio-list";
+    public static final String NODE_DEVICES = "devices";
+    public static final String NODE_GPIO_LIST = "gpio-list";
 
 
     private static FirebaseDatabase mDatabase;

@@ -8,4 +8,12 @@
         <item>Temperature</item>
         <item>Passive Infrared</item>
     </string-array>
+
+    <string-array name="gpio">
+        <item>BCM17</item>
+        <item>BCM22</item>
+        <item>BCM26</item>
+        <item>BCM27</item>
+
+    </string-array>
 </resources>

@@ -2,15 +2,17 @@ package bertanha.com.br.mylibrary.model;
 
 import com.google.android.things.pio.Gpio;
 
+import java.io.Serializable;
+
 /**
  * Created by berta on 2/15/2018.
  */
 
-public class Device {
-    public static final int TYPE_LED = 0;
-    public static final int TYPE_RELE = 1;
+public class Device implements Serializable{
+    public static final int TYPE_LIGHT = 0;
+    public static final int TYPE_TEMPERATURE = 1;
     public static final int TYPE_PIR = 2;
-    public static final int TYPE_WEATHER = 3;
+
 
     private String description;
     private String bcm;
