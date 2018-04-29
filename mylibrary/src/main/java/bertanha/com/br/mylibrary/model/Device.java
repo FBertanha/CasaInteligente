@@ -1,5 +1,7 @@
 package bertanha.com.br.mylibrary.model;
 
+import com.google.android.things.pio.Gpio;
+
 /**
  * Created by berta on 2/15/2018.
  */
@@ -15,6 +17,7 @@ public class Device {
     private int type;
     private boolean value;
     private String status;
+    private Gpio gpio;
 
     public Device() {
     }
@@ -80,6 +83,7 @@ public class Device {
                 ", type=" + type +
                 ", value=" + value +
                 ", status='" + status + '\'' +
+                ", gpio=" + gpio +
                 '}';
     }
 
@@ -89,5 +93,13 @@ public class Device {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setGpio(Gpio gpio) {
+        this.gpio = gpio;
+    }
+
+    public Gpio getGpio() {
+        return gpio;
     }
 }

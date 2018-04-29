@@ -11,8 +11,8 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 
 import bertanha.com.br.casainteligente.R;
-import bertanha.com.br.casainteligente.model.Device;
 import bertanha.com.br.casainteligente.ui.viewholder.DeviceViewHolder;
+import bertanha.com.br.mylibrary.model.Device;
 
 /**
  * Created by berta on 2/24/2018.

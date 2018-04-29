@@ -2,8 +2,16 @@ package bertanha.com.br.casainteligente;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.google.android.things.device.DeviceManager;
+import com.google.android.things.pio.PeripheralManager;
+import com.google.firebase.database.DatabaseReference;
 
 import bertanha.com.br.casainteligente.manager.BoardManager;
+import bertanha.com.br.mylibrary.util.FirebaseUtils;
+
+import static bertanha.com.br.mylibrary.util.FirebaseUtils.GPIO_LIST;
 
 
 /**
@@ -35,12 +43,24 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         boardManager = new BoardManager();
+
+        PeripheralManager managerService = PeripheralManager.getInstance();
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         boardManager.start();
+
+        PeripheralManager managerService = PeripheralManager.getInstance();
+
+        DatabaseReference gpioList = FirebaseUtils.getDatabaseReference().child(GPIO_LIST);
+
+
+        Log.i(TAG, "onStart: " + managerService.getGpioList());
+
+
     }
 
     @Override

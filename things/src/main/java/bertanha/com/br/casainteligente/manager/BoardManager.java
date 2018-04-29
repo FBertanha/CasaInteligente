@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bertanha.com.br.casainteligente.model.Device;
+import bertanha.com.br.mylibrary.model.Device;
 import bertanha.com.br.mylibrary.util.FirebaseUtils;
 
 /**
@@ -137,7 +137,7 @@ public class BoardManager {
 
         devices.add(new Device("Led azul", "BCM17", Device.TYPE_LED));
         devices.add(new Device("Led Vermelho", "BCM27", Device.TYPE_LED));
-        devices.add(new Device("Weather", "BCM26", Device.TYPE_WEATHER, "27 C"));
+        devices.add(new Device("Weather", "BCM26", Device.TYPE_WEATHER));
 
         for (Device device:
              devices) {

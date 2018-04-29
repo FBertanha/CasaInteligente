@@ -32,5 +32,6 @@ dependencies {
     androidTestApi 'com.android.support.test:runner:1.0.1'
     androidTestApi 'com.android.support.test.espresso:espresso-core:3.0.1'
     api 'com.google.firebase:firebase-database:11.8.0'
+    api 'com.google.android.things:androidthings:+'
 
 }

@@ -39,11 +39,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ToggleButton
+
                 android:id="@+id/device_item_toggle"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="ToggleButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/device_item_description" />
 

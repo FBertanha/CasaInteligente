@@ -1,10 +1,15 @@
 package bertanha.com.br.casainteligente.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -15,8 +20,7 @@ import bertanha.com.br.casainteligente.ui.adapter.DeviceAdapter;
 import bertanha.com.br.mylibrary.model.Device;
 import bertanha.com.br.mylibrary.util.FirebaseUtils;
 
-public class MainActivity extends AppCompatActivity {
-
+public class HomeActivity extends AppCompatActivity {
     private String TAG = getClass().getName();
     DatabaseReference mDatabaseRef;
     private RecyclerView mRecyclerView;
@@ -25,7 +29,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, NewDeviceActivity.class));
+            }
+        });
 
         mDatabaseRef = FirebaseUtils.getDatabaseReference();
 
@@ -34,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         //LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
     }
+
 
     @Override
     protected void onStart() {
@@ -51,4 +66,5 @@ public class MainActivity extends AppCompatActivity {
             mAdapter.startListening();
         }
     }
+
 }

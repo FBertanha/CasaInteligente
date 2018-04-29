@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">CasaInteligente</string>
+    <string name="app_name">Casa Inteligente</string>
+    <string name="title_activity_home">Device</string>
+    <string name="device_description">Device description</string>
+
+    <string-array name="device_type">
+        <item>Light</item>
+        <item>Temperature</item>
+        <item>Passive Infrared</item>
+    </string-array>
 </resources>
